@@ -1,0 +1,14 @@
+services:
+  bacdz:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      JWT_SECRET: dev-only-change-this-secret-please-32-chars
+      ADMIN_EMAIL: admin@bacdz.local
+      ADMIN_PASSWORD: ChangeMe12345678
+      CORS_ORIGIN: http://localhost:3000
+      DB_FILE: /app/data/bacdz.sqlite
+    volumes:
+      - ./data:/app/data
